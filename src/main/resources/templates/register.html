@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+</head>
+<body>
+	<center>
+		<form th:action="@{/employee/insert_employee}" method="post"
+			th:object="${employee}">
+			<table border="1" bgcolor="cyan">
+				<tr>
+					<td>Employee Name::</td>
+					<td><input type="text" th:field="*{ename}" /></td>
+					<td style="color: red" th:if="${#fields.hasErrors('ename')}"
+						th:errors="*{ename}" />
+				</tr>
+				<tr>
+					<td>Employee Job::</td>
+					<td><input type="text" th:field="*{job}" /></td>
+					<td style="color: red" th:if="${#fields.hasErrors('job')}"
+						th:errors="*{job}" />
+				</tr>
+				<tr>
+					<td>Employee Salary::</td>
+					<td><input type="text" th:field="*{salary}" /></td>
+					<td style="color: red" th:if="${#fields.hasErrors('salary')}"
+						th:errors="*{salary}" />
+				</tr>
+				<tr>
+					<td>Employee Deptno::</td>
+					<td><input type="text" th:field="*{deptno}" /></td>
+					<td style="color: red" th:if="${#fields.hasErrors('deptno')}"
+						th:errors="*{deptno}" />
+				</tr>
+				<tr>
+					<td><input type="submit" value="register" /></td>
+					<td>
+						<button type="reset">Reset</button>
+					</td>
+				</tr>
+
+			</table>
+		</form>
+	</center>
+</body>
+</html>
